@@ -88,13 +88,13 @@ MODELS = {
 }
 
 # Oppure per disabilitare Gemini:
-# MODELS = {
-#     # "gemini": ["models/gemini-2.5-pro", "models/gemini-2.5-flash"], # Decommenta o rimuovi questa riga per disabilitare Gemini
-#     "openai": ["gpt-4o", "gpt-4o-mini"],
-# }
+MODELS = {
+    # "gemini": ["models/gemini-2.5-pro", "models/gemini-2.5-flash"], # Decommenta o rimuovi questa riga per disabilitare Gemini
+    "openai": ["gpt-4o", "gpt-4o-mini"],
+}
 
 # Se vuoi disabilitare entrambe, puoi impostare MODELS a un dizionario vuoto:
-# MODELS = {}
+MODELS = {}
 
 # ... altre configurazioni
 ```
