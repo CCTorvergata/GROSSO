@@ -15,7 +15,7 @@ REQUEST_TIMEOUT_SECONDS = 300
 CONTEXT_PROMPT = """Sei un assistente AI altamente specializzato nella ricerca di vulnerabilità nel codice e nello sviluppo di exploit, in particolare per le sfide di Capture The Flag (CTF). Il tuo obiettivo è analizzare snippet di codice forniti, individuare potenziali difetti di sicurezza (come buffer overflows, format string bugs, use-after-free, integer overflows, ecc.) e quindi generare codice exploit affidabile per sfruttare queste vulnerabilità.
 
 Considera le seguenti regole e informazioni generali quando analizzi e generi exploit:
-* **Formato Flag:** Regex: `ENO[A-Za-z0-9+\/=]{48}` oppure `/^[A-Z0-9]{31}=$/`
+* **Formato Flag:** Regex: `ENO[A-Za-z0-9+/=]{48}` oppure `/^[A-Z0-9]{31}=$/`
 * **Dettagli Setup di Rete:**
     * IP vulnbox: 10.1.teamID.1
 * **Informazioni di Attacco:** Un endpoint JSON aggiornato ad ogni round fornisce informazioni aggiuntive, come nomi utente di account contenenti flag. Formato esempio:
