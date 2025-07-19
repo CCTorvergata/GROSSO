@@ -34,7 +34,15 @@ def read_directory_recursively(root_dir, max_size_bytes):
 def collect_file_contents(files):
     file_dict = {}
 
-    for f in files:
+    # Flatten the list if it contains sublists
+    flat_files = []
+    for item in files:
+        if isinstance(item, list):
+            flat_files.extend(item)
+        else:
+            flat_files.append(item)
+
+    for f in flat_files:
         try:
             if f.kind == "text":
                 with open(f.path, "r", encoding="utf-8", errors="replace") as fp:
@@ -47,7 +55,7 @@ def collect_file_contents(files):
                 content = "[Binary file without disassembly]"
         except Exception as e:
             content = f"[Error reading file: {e}]"
-            logger.error(f"Failed to collect content for {f.name}: {e}")
+            logger.error(f"Failed to collect content for {getattr(f, 'name', str(f))}: {e}")
 
         file_dict[f] = content
 
